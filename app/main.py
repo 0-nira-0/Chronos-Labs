@@ -36,7 +36,7 @@ class CalcResponse(BaseModel):
 
 @app.get("/api/health")
 async def health():
-    return {"status": "vse ok"}
+    return {"status": "proverka git action"}
 
 @app.get("/api/weather/calc", response_model=CalcResponse, dependencies=[Depends(require_api_key)])
 async def weather_calc(
