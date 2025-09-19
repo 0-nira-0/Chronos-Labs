@@ -9,16 +9,16 @@ API_KEY = os.getenv("API_KEY")
 
 app = FastAPI(title="Weather Calculations API")
 
-# Разрешаем все origin для фронта
+#разрешаем все origin для фронта
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # на проде заменить на фронт
+    allow_origins=["*"],  #на проде заменить на фронт
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Проверка ключа
+#проверка ключа
 def require_api_key(authorization: Optional[str] = Header(None)):
     if not API_KEY:
         return
@@ -28,7 +28,7 @@ def require_api_key(authorization: Optional[str] = Header(None)):
     if len(parts) != 2 or parts[0].lower() != "bearer" or parts[1] != API_KEY:
         raise HTTPException(status_code=401, detail="Invalid API key")
 
-# Модель ответа
+#модель ответа
 class CalcResponse(BaseModel):
     input: dict
     results: dict
@@ -36,7 +36,7 @@ class CalcResponse(BaseModel):
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok"}
+    return {"status": "vse ok"}
 
 @app.get("/api/weather/calc", response_model=CalcResponse, dependencies=[Depends(require_api_key)])
 async def weather_calc(
@@ -61,3 +61,4 @@ async def weather_calc(
         "results": results,
         "meta": {"status": "mock", "duration_ms": int((time.time() - start_ts) * 1000)}
     }
+#future features like changing background(eto ot siebia) i czto nibud jeszcze pridumaju
