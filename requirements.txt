@@ -2,3 +2,7 @@ fastapi
 uvicorn[standard]
 python-dotenv
 pydantic
+xarray
+pathlib
+h5netcdf
+netcdf4 

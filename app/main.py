@@ -2,7 +2,6 @@ import os
 import time
 from typing import Optional
 from fastapi import FastAPI, Query, HTTPException, Depends, Header
-
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import xarray as xr
