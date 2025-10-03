@@ -1,0 +1,88 @@
+{
+  "date_local": "2025-08-23",
+  "location": {
+    "name": "Black Rock Desert, NV",
+    "lat": 40.786,
+    "lon": -119.206,
+    "bbox": [
+      40.3,
+      41.2,
+      -119.8,
+      -118.6
+    ],
+    "timezone": "US/Pacific"
+  },
+  "metrics": {
+    "precip_24h_mm": 0.19,
+    "precip_24h_in": 0.0075,
+    "tmax_c": 35.52,
+    "tmin_c": 21.48,
+    "tmax_f": 95.94,
+    "tmin_f": 70.66,
+    "wind_sust_max_mps": 17.0,
+    "wind_sust_max_mph": 38.0
+  },
+  "flags": {
+    "very_wet": 0,
+    "windy": 1,
+    "heat": 1,
+    "cold": 0
+  },
+  "thresholds": {
+    "very_wet_mm": 6.0,
+    "windy_sust_mps": 10.0,
+    "heat_c": 35.0,
+    "cold_c": 5.0
+  },
+  "units": {
+    "temp": "\u00b0C/\u00b0F",
+    "precip": "mm/in",
+    "wind": "m/s/mph"
+  },
+  "sources": [
+    {
+      "what": "24h precipitation (bbox mean)",
+      "provider": "NASA GPM IMERG V07 Daily (Late)",
+      "file": "3B-DAY-L.MS.MRG.3IMERG.20250823-S000000-E235959.V07B.nc4",
+      "units": "mm/day",
+      "bbox": [
+        40.3,
+        41.2,
+        -119.8,
+        -118.6
+      ],
+      "from_atomic": "passport_precip_2025-08-23.json"
+    },
+    {
+      "what": "Daily Tmax/Tmin from hourly T2M (bbox mean)",
+      "provider": "NASA MERRA-2 tavg1_2d_slv_Nx (T2M), V5.12.4",
+      "file": "MERRA2_400.tavg1_2d_slv_Nx.20250823.nc4",
+      "units": "\u00b0C",
+      "notes": "Hourly 1-hourly averaged 2 m air temperature; bbox-average; daily max/min over file's times (UTC).",
+      "bbox": [
+        40.3,
+        41.2,
+        -119.8,
+        -118.6
+      ],
+      "from_atomic": "passport_temp_2025-08-23.json"
+    },
+    {
+      "what": "Sustained wind (daily max) from nearest station",
+      "provider": "NOAA NCEI Global Hourly (ISD)",
+      "file": "72580524172.csv",
+      "station": {
+        "name": "LOVELOCK DERBY FIELD AIRPORT, NV US",
+        "usaf_wban": "72580524172",
+        "lat": 40.06843,
+        "lon": -118.57018,
+        "obs_time_utc": "2025-08-23T23:53:00",
+        "dataset": "NOAA NCEI Global Hourly (ISD)",
+        "file": "72580524172.csv"
+      },
+      "units": "m/s/mph",
+      "from_atomic": "passport_wind_2025-08-23.json"
+    }
+  ],
+  "notes": "Aggregated from three atomic passports (precip/temp/wind). Includes full sources for direct app use."
+}

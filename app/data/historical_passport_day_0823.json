@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "day": "08-23",
+    "window": [
+      "08-20",
+      "08-26"
+    ],
+    "location": "Black Rock Desert, NV",
+    "bbox": [
+      40.3,
+      41.2,
+      -119.8,
+      -118.6
+    ],
+    "timezone_note": "Daily aggregation in UTC",
+    "years": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "version": "2025-09-30_hist_v1",
+    "thresholds": {
+      "very_wet_mm_day": 6.0,
+      "windy_ms": 10.0,
+      "windy_alt_ms": 8.0,
+      "heat_c": 35.0,
+      "cold_c": 0.0
+    }
+  },
+  "sources": [
+    {
+      "key": "precipitation",
+      "title": "GPM IMERG Final Daily V07 (GPM_3IMERGDF)",
+      "vars": [
+        "precipitationCal (mm/day)"
+      ],
+      "url": "https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGDF_07/summary",
+      "notes": "Daily precipitation sum; bbox mean; UTC day."
+    },
+    {
+      "key": "wind",
+      "title": "NOAA NCEI ISD — Station KLOL (Lovelock Derby Field)",
+      "vars": [
+        "WND (sustained wind) → m/s"
+      ],
+      "url": "https://www.ncei.noaa.gov/products/integrated-surface-database",
+      "notes": "Hourly sustained wind parsed from ISD WND; daily max; UTC day; days with <12 hourly obs excluded."
+    },
+    {
+      "key": "temperature",
+      "title": "NOAA NCEI ISD — Station KLOL (Lovelock Derby Field)",
+      "vars": [
+        "TMP (air temperature) → °C"
+      ],
+      "url": "https://www.ncei.noaa.gov/products/integrated-surface-database",
+      "notes": "Hourly TMP; daily Tmax/Tmin; UTC day; days with <12 hourly obs excluded."
+    }
+  ],
+  "buttons": {
+    "very_wet": {
+      "threshold": {
+        "very_wet_mm_day": 6.0
+      },
+      "p_day": {
+        "08-20": 0.0667,
+        "08-21": 0.1333,
+        "08-22": 0.4,
+        "08-23": 0.0,
+        "08-24": 0.1333,
+        "08-25": 0.1333,
+        "08-26": 0.0
+      },
+      "prob_any_window": 0.6,
+      "prob_day_target": {
+        "mmdd": "08-23",
+        "prob_at_thr": 0.0
+      },
+      "window": [
+        "08-20",
+        "08-26"
+      ],
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    },
+    "windy": {
+      "threshold": {
+        "windy_ms": 10.0,
+        "alt_ms": 8.0
+      },
+      "p_day": {
+        "08-20": 0.0667,
+        "08-21": 0.1333,
+        "08-22": 0.0,
+        "08-23": 0.1333,
+        "08-24": 0.0667,
+        "08-25": 0.0714,
+        "08-26": 0.0667
+      },
+      "p_day_alt": {
+        "08-20": 0.2667,
+        "08-21": 0.2667,
+        "08-22": 0.5714,
+        "08-23": 0.3333,
+        "08-24": 0.1333,
+        "08-25": 0.2143,
+        "08-26": 0.2667
+      },
+      "prob_any_window": 0.4,
+      "prob_any_window_alt": 0.8667,
+      "prob_day_target": {
+        "mmdd": "08-23",
+        "prob_at_thr": 0.1333,
+        "prob_at_alt": 0.3333
+      },
+      "window": [
+        "08-20",
+        "08-26"
+      ],
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    },
+    "heat": {
+      "threshold": {
+        "heat_c": 35.0
+      },
+      "p_day": {
+        "08-20": 0.6,
+        "08-21": 0.4667,
+        "08-22": 0.3571,
+        "08-23": 0.3333,
+        "08-24": 0.4,
+        "08-25": 0.5,
+        "08-26": 0.4
+      },
+      "prob_any_window": 0.6667,
+      "prob_day_target": {
+        "mmdd": "08-23",
+        "prob_at_thr": 0.3333
+      },
+      "window": [
+        "08-20",
+        "08-26"
+      ],
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    },
+    "cold": {
+      "threshold": {
+        "cold_c": 0.0
+      },
+      "p_day": {
+        "08-20": 0.0,
+        "08-21": 0.0,
+        "08-22": 0.0,
+        "08-23": 0.0,
+        "08-24": 0.0,
+        "08-25": 0.0,
+        "08-26": 0.0
+      },
+      "prob_any_window": 0.0,
+      "prob_day_target": {
+        "mmdd": "08-23",
+        "prob_at_thr": 0.0
+      },
+      "window": [
+        "08-20",
+        "08-26"
+      ],
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  }
+}
