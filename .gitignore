@@ -18,3 +18,5 @@ venv/
 # Byte-compiled / cache
 *.pyc
 *.pkl
+
+.github
