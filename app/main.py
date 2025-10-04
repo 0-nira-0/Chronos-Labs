@@ -16,6 +16,11 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 CURRENT_FILE = "passport_day_2025-08-23.json"
 HISTORICAL_FILE = "historical_passport_day_0823.json"
 
+#for vercel
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
 def load_json(filename):
     path = os.path.join(DATA_DIR, filename)
     if not os.path.exists(path):

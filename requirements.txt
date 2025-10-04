@@ -1,12 +1,4 @@
 fastapi
-uvicorn[standard]
-python-dotenv
+uvicorn
 pydantic
-xarray
-pathlib
-h5netcdf
-netcdf4 
-typing
-time
-numpy
-pathlib
+python-dotenv
