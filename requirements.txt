@@ -6,3 +6,7 @@ xarray
 pathlib
 h5netcdf
 netcdf4 
+typing
+time
+numpy
+pathlib
